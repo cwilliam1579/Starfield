@@ -2,7 +2,7 @@ Particle [] bob;
 void setup()
 {
   size(500, 500);
-  bob=new Particle [300];
+  bob=new Particle [350];
   for (int i=0; i<6; i++) {
     bob[i]=new OddballParticle();
   }
@@ -32,8 +32,8 @@ void mousePressed()
     bob[i]=new Particle();
   }
   for (int i=0; i<bob.length; i++) {
-    bob[i].y=250;
-    bob[i].x=250;
+    bob[i].y=mouseY;
+    bob[i].x=mouseX;
   }
 }
 
@@ -48,9 +48,8 @@ class Particle
     x= 250;
     y=250;
     myAngle=Math.random()*2*Math.PI;
-    mySpeed=Math.random()*10;
+    mySpeed=Math.random()*10+1.2;
   }
-
 
   void move() {
     x += Math.cos(myAngle) * mySpeed;
@@ -69,7 +68,8 @@ class OddballParticle extends Particle  //inherits from Particle
 {
   OddballParticle()
   {
-    x=y=250;
+    x=250;
+    y=250;
     k=(((int)(Math.random()*10))*2)+1;
     mySpeed=Math.random()*4+2;
   }
@@ -88,8 +88,8 @@ class OddballParticle extends Particle  //inherits from Particle
     x += Math.cos(myAngle) * mySpeed;
     y += Math.sin(myAngle) * mySpeed;
     if (x>500 || x<0 ||y>500 || y<0) {
-      x = 250;
-      y = 250;
+      x = mouseX;
+      y = mouseY;
     }
   }
 }

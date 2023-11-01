@@ -70,7 +70,7 @@ class OddballParticle extends Particle  //inherits from Particle
   OddballParticle()
   {
     x=y=250;
-    k=(((int)(Math.random()*6))*2)+1;
+    k=(((int)(Math.random()*10))*2)+1;
     mySpeed=Math.random()*4+2;
   }
 

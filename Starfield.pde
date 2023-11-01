@@ -59,7 +59,7 @@ class Particle
   void show() {
     noStroke();
     fill(0, 0, 0);
-    circle((int)x, (int)y, 30);
+    ellipse((int)x, (int)y, 30,30);
     fill(255, 255, 255);
     text(k, (int)x-3, (int)y+3);
   }
@@ -78,7 +78,7 @@ class OddballParticle extends Particle  //inherits from Particle
   void show() {
     noStroke();
     fill(255, 0, 0);
-    circle((int)x, (int)y, 30);
+    ellipse((int)x, (int)y, 30,30);
     fill(255, 255, 255);
     text(k, (int)x-3, (int)y+3);
   }
